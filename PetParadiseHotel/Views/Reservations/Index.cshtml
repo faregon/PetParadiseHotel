@@ -1,0 +1,65 @@
+﻿@model PetParadiseHotel.ViewModels.Reservations
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer Information</h2>
+@using (Html.BeginForm())
+{
+    <div class="dataElem formRes">
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.FirstName)
+            @Html.EditorFor(m => m.Invoice.Customer.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.LastName)
+            @Html.EditorFor(m => m.Invoice.Customer.LastName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.Address)
+            @Html.EditorFor(m => m.Invoice.Customer.Address)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.City)
+            @Html.EditorFor(m => m.Invoice.Customer.City)
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.Zip)
+            @Html.EditorFor(m => m.Invoice.Customer.Zip)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.Email)
+            @Html.EditorFor(m => m.Invoice.Customer.Email)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Invoice.Customer.Phone)
+            @Html.EditorFor(m => m.Invoice.Customer.Phone)
+        </p>
+
+    </div>
+    <div class="dataElem1 petForm">
+        <p><strong>Pet</strong></p>
+
+        @Html.DropDownListFor(m => m.OrderItem.Specie, new SelectList(Model.OrderItem.PriceList, "Key", "Key"))
+        <p>
+            @Html.LabelFor(m => m.OrderItem.Arrival)
+            @Html.EditorFor(m => m.OrderItem.Arrival)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.OrderItem.Departure)
+            @Html.EditorFor(m => m.OrderItem.Departure)
+        </p>
+        <input type="submit" value="Checkout" />
+
+
+
+ </div>
+
+}
+<p>@Html.DisplayFor(m => m.Invoice.Customer.FirstName) @Html.DisplayFor(m => m.Invoice.Customer.LastName)</p>
+<p>@Html.DisplayFor(m => m.Invoice.Customer.Address)</p>
+<p>@Html.DisplayFor(m => m.Invoice.Customer.City) @Html.DisplayFor(m => m.Invoice.Customer.Zip)</p>
+<p>Specie :@Html.DisplayFor(m => m.OrderItem.Specie)</p>
+<p>Period: @Html.DisplayFor(m => m.OrderItem.Arrival) to @Html.DisplayFor(m => m.OrderItem.Departure) </p>
+<p>Total days: @Html.DisplayFor(m => m.OrderItem.Days)</p>
+<p>Price per day: @Html.DisplayFor(m => m.OrderItem.PricePerday) kr.</p>
+<p> Total price : @Html.DisplayFor(m => m.Invoice.TotalPrice) kr.</p>

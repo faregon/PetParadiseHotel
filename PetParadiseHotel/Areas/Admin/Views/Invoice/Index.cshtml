@@ -1,0 +1,30 @@
+﻿@model PetParadiseHotel.ViewModels.Reservations
+@{
+    ViewBag.Title = "Invoice";
+}
+
+<h2>Index</h2>
+
+@foreach (var invoice in Model.ReservationList)
+{ <p>
+        @invoice.Customer.FirstName @invoice.Customer.LastName <br />
+        @invoice.Customer.Address<br />
+        @invoice.Customer.Zip @invoice.Customer.City<br />
+
+        @foreach (var item in invoice.OrderItems)
+        {
+            <p>
+                Species: @item.Specie<br />
+                Name: @item.PetName <br />
+                Period: @item.Arrival.ToString("D") to @item.Departure.ToString("D")<br />
+                Days: @item.Days<br />
+                Price: @item.PricePerday kr. per day <br />
+                Price for the whole stay: @invoice.TotalPrice kr.
+
+
+
+            </p>
+        }
+<hr />
+    </p>
+}
