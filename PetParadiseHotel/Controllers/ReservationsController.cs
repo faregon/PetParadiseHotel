@@ -22,8 +22,20 @@ namespace PetParadiseHotel.Controllers
         public ActionResult Index(Reservations reserv)
         {
 
-            reserv.PopulatePriceList();
             reserv.Invoice.OrderItems.Add(reserv.OrderItem);
+            reserv.Invoice.OrderDate = DateTime.Now;
+            if (Session["repository"] == null)
+            {
+                repository = new Repository();
+                Session["repository"] = repository;
+            }
+            else
+            {
+                repository = (Repository)Session["repository"];
+            }
+            reserv.PopulatePriceList();
+          
+            repository.Invoices.Add(reserv.Invoice);
             return View(reserv);
         }
     }

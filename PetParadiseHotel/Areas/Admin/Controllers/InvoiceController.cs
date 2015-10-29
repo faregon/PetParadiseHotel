@@ -15,9 +15,18 @@ namespace PetParadiseHotel.Areas.Admin.Controllers
         // GET: Admin/Invoice
         public ActionResult Index()
         {
-            Reservations reservations = new Reservations();
-            reservations.PopulateReservations();
-            return View(reservations);
+            if (Session["repository"] == null)
+            {
+                repository = new Repository();
+                Session["repository"] = repository;
+            }
+            else
+            {
+                repository = (Repository)Session["repository"];
+            }
+          
+      
+            return View(repository);
         }
     }
 }

@@ -7,21 +7,13 @@ namespace PetParadiseHotel.Models
 {
     public class Person
     {
-        private string phone;
+ 
 
         public int PersonId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Phone { get { return phone; } set
-            {
-                if (phone.Length <= 8)
-                {
-                    phone = value;
-                }
-                else
-                    throw new Exception("Phone number is invalid");
-                    }
-        }
+        public string Phone { get; set; }
+
 
         public Person() { }
 
@@ -29,7 +21,7 @@ namespace PetParadiseHotel.Models
         {
             FirstName = firstName;
             LastName = lastName;
-            this.phone = phone;
+            Phone = phone;
         }
     }
 }

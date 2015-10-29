@@ -1,11 +1,11 @@
-﻿@model PetParadiseHotel.ViewModels.Reservations
+﻿@model PetParadiseHotel.Infrastructure.Repository
 @{
     ViewBag.Title = "Invoice";
 }
 
 <h2>Index</h2>
 
-@foreach (var invoice in Model.ReservationList)
+@foreach (var invoice in Model.Invoices)
 { <p>
         @invoice.Customer.FirstName @invoice.Customer.LastName <br />
         @invoice.Customer.Address<br />
@@ -21,10 +21,9 @@
                 Price: @item.PricePerday kr. per day <br />
                 Price for the whole stay: @invoice.TotalPrice kr.
 
-
-
             </p>
         }
+Employee: @invoice.Employee.FirstName
 <hr />
     </p>
 }

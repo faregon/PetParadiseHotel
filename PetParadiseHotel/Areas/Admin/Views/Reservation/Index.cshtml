@@ -1,4 +1,4 @@
-﻿@model PetParadiseHotel.ViewModels.Reservations
+﻿@model PetParadiseHotel.Infrastructure.Repository
 
 @{
     ViewBag.Title = "Reservations";
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         @*going through all invoices*@
-        @foreach (var invoice in Model.ReservationList)
+        @foreach (var invoice in Model.Invoices)
         {
             //going through all the items in OrderItem list
             foreach (var item in invoice.OrderItems)
