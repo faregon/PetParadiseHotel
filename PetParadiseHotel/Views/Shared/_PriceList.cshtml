@@ -1,7 +1,9 @@
-﻿<ul>
-@foreach (var item in ViewBag.Prices)
-{
-    <li>@item.Key @item.Value kr. per day</li>
-}
+﻿<div id="priceList">
+    <ul>
+        @foreach (var item in ViewBag.Prices)
+        {
+            <li>@item.Key @item.Value kr. per day</li>
+        }
 
     </ul>
+</div>

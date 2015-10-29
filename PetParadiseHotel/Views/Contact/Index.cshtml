@@ -4,6 +4,11 @@
 }
 
 <h2>Index</h2>
+<h5>All the details are on <br /> the right side on the page</h5>
 
-@Html.Partial("_LocationHistory")
-@Html.Action("_PriceList", "CActions")
+@section Contact{
+    @Html.Partial("_LocationHistory")
+}
+@section Pricelist{
+    @Html.Action("_PriceList", "CActions")
+}

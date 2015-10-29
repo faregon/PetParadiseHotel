@@ -18,15 +18,12 @@ textarea {
 }
 
 .formRes {
+    
     text-align:right;
-    display: inline-block;
+    display:inline-block;   
 }
 .petForm {
     text-align: right;
-    
     display: inline-block;
+    
 }
-/*.body-content {
-        background-image: url('Images/animals-q-c-1280-780-9.jpg');
-    background-size:cover;
-}*/

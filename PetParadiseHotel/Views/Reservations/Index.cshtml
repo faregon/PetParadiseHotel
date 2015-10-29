@@ -35,8 +35,7 @@
             @Html.EditorFor(m => m.Invoice.Customer.Phone)
         </p>
 
-    </div>
-    <div class="dataElem1 petForm">
+
         <p><strong>Pet</strong></p>
 
         @Html.DropDownListFor(m => m.OrderItem.Specie, new SelectList(Model.OrderItem.PriceList, "Key", "Key"))
@@ -48,19 +47,38 @@
             @Html.LabelFor(m => m.OrderItem.Departure)
             @Html.EditorFor(m => m.OrderItem.Departure)
         </p>
-        <input type="submit" value="Checkout" />
+        <div class="dataElem1 formRes">
+            <p><strong>Employee</strong></p>
+
+         
+            <p>
+                @Html.LabelFor(m=> m.Invoice.Employee.FirstName)
+                @Html.EditorFor(m => m.Invoice.Employee.FirstName)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Invoice.Employee.LastName)
+                @Html.EditorFor(m => m.Invoice.Employee.LastName)
+            </p>
+            <input type="submit" value="Checkout" />
 
 
-
- </div>
+            </div>
+        </div>
 
 }
-<p>@Html.DisplayFor(m => m.Invoice.Customer.FirstName) @Html.DisplayFor(m => m.Invoice.Customer.LastName)</p>
-<p>@Html.DisplayFor(m => m.Invoice.Customer.Address)</p>
-<p>@Html.DisplayFor(m => m.Invoice.Customer.City) @Html.DisplayFor(m => m.Invoice.Customer.Zip)</p>
-<p>Specie :@Html.DisplayFor(m => m.OrderItem.Specie)</p>
-<p>Period: @Html.DisplayFor(m => m.OrderItem.Arrival) to @Html.DisplayFor(m => m.OrderItem.Departure) </p>
-<p>Total days: @Html.DisplayFor(m => m.OrderItem.Days)</p>
-<p>Price per day: @Html.DisplayFor(m => m.OrderItem.PricePerday) kr.</p>
-<p> Total price : @Html.DisplayFor(m => m.Invoice.TotalPrice) kr.</p>
-<p>Phone @Html.DisplayFor(m=> m.Invoice.Customer.Phone)</p>
+
+
+@section CustomerInfo{
+    <div id="customerInfo" style="margin-top:-550px">
+    <p>@Html.DisplayFor(m => m.Invoice.Customer.FirstName) @Html.DisplayFor(m => m.Invoice.Customer.LastName)</p>
+    <p>@Html.DisplayFor(m => m.Invoice.Customer.Address)</p>
+    <p>@Html.DisplayFor(m => m.Invoice.Customer.City) @Html.DisplayFor(m => m.Invoice.Customer.Zip)</p>
+    <p>Specie :@Html.DisplayFor(m => m.OrderItem.Specie)</p>
+    <p>Period: @Html.DisplayFor(m => m.OrderItem.Arrival) to @Html.DisplayFor(m => m.OrderItem.Departure) </p>
+    <p>Total days: @Html.DisplayFor(m => m.OrderItem.Days)</p>
+    <p>Price per day: @Html.DisplayFor(m => m.OrderItem.PricePerday) kr.</p>
+    <p> Total price : @Html.DisplayFor(m => m.Invoice.TotalPrice) kr.</p>
+    <p>Phone @Html.DisplayFor(m => m.Invoice.Customer.Phone)</p>
+</div>
+}
+

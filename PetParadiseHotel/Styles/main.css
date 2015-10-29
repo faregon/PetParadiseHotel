@@ -1,0 +1,67 @@
+﻿    
+        div#wrapper {
+            width: 960px;
+            margin: auto;
+            background-color: lightblue;
+         
+            background-repeat: no-repeat;
+        }
+
+
+        header #logo {
+            font: 2.4em bold;
+            font-family: 'Palatino Linotype';
+            color: darksalmon;
+        }
+
+        menu {
+            display: inline-block;
+        }
+
+        ul#mainmenu li {
+            display: inline-block;
+        }
+
+        div#main-content {
+            position: relative;
+            min-height: 400px;
+            width: 70%;
+            float: left;
+        }
+
+        div#info-boxes {
+            float: right;
+            margin-top: 2%;
+        }
+
+        div#contact-info {
+            background-color:#eee;
+            height: 20em;
+            margin: 1em;
+            width: 12em;
+            border: 1px solid;
+            border-color: navy;
+            padding: 0 0.4em;
+        }
+
+         div#pricelist {
+            background-color:#eee;
+            height: 12em;
+            margin: 1em;
+            width: 12em;
+            border: 1px solid;
+            border-color: navy;
+            padding: 0 0.4em;
+        }
+
+        p + ul {
+            margin-top: -10px;
+        }
+        
+        footer {
+                clear: both;
+                width: 100%;
+                text-align: left;
+            }
+
+
