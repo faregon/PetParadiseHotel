@@ -30,3 +30,4 @@ C:\Users\D'oh\Documents\Visual Studio 2015\Projects\PetParadiseHotel\PetParadise
 C:\Users\D'oh\Documents\Visual Studio 2015\Projects\PetParadiseHotel\PetParadiseHotel\bin\System.Web.Mvc.xml
 C:\Users\D'oh\Documents\Visual Studio 2015\Projects\PetParadiseHotel\PetParadiseHotel\obj\Debug\PetParadiseHotel.dll
 C:\Users\D'oh\Documents\Visual Studio 2015\Projects\PetParadiseHotel\PetParadiseHotel\obj\Debug\PetParadiseHotel.pdb
+C:\Users\D'oh\Documents\Visual Studio 2015\Projects\PetParadiseHotel\PetParadiseHotel\obj\Debug\PetParadiseHotel.csprojResolveAssemblyReference.cache
