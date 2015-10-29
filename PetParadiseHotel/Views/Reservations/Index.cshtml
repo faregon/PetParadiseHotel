@@ -40,6 +40,11 @@
 
         @Html.DropDownListFor(m => m.OrderItem.Specie, new SelectList(Model.OrderItem.PriceList, "Key", "Key"))
         <p>
+            @Html.LabelFor(m=>m.OrderItem.PetName)
+            @Html.EditorFor(m=>m.OrderItem.PetName)
+        </p>
+        <p>
+
             @Html.LabelFor(m => m.OrderItem.Arrival)
             @Html.EditorFor(m => m.OrderItem.Arrival)
         </p>
