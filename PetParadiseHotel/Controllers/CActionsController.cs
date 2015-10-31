@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PetParadiseHotel.Infrastructure;
 
 namespace PetParadiseHotel.Controllers
 {
@@ -29,6 +30,24 @@ namespace PetParadiseHotel.Controllers
             ViewBag.Prices = prices;
 
             return PartialView("_PriceList", prices);
+        }
+
+        [ChildActionOnly]
+        public ActionResult _ResidentPets()
+        {
+            Repository repository = new Repository();
+            if (Session["repository"] == null)
+            {
+                repository = new Repository();
+                Session["repository"] = repository;
+            }
+            else
+            {
+                repository = (Repository)Session["repository"];
+            }
+          
+      
+            return View("_ResidentPets",repository);
         }
     }
 }
