@@ -15,13 +15,14 @@ namespace PetParadiseHotel.Models
         public List<Invoice> Invoices {
             get { return invoices; }
         }
+        //creating constructors
         public Employee() { }
-
         public Employee(int employeeId, string firstName, string lastName, string initials, string phone):base(firstName, lastName, phone)
         {
             EmployeeId = employeeId;
             Initials = initials;
         }
+        //creating a method to add emplyoes to the list of invoices
         public void AddInvoice (Invoice invoice)
         {
             Invoices.Add(invoice);

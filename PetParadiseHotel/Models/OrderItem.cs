@@ -22,6 +22,7 @@ namespace PetParadiseHotel.Models
             set { days = value; }
             get
             {
+                //calculating the total days by extracting departure date from arrival date
                 TimeSpan span = Departure - Arrival;
                 days = (int)span.TotalDays;
                 return days;
@@ -35,6 +36,9 @@ namespace PetParadiseHotel.Models
             set { pricePerDay = value; }
             get
             {
+                //getting the price per day from the pricelist
+                //by doing a foearch loop traversing in the dictionary
+                //and attaching each key with a value
                 foreach(var item in priceList)
                 {
                     if (item.Key.Equals(Specie))
@@ -52,8 +56,8 @@ namespace PetParadiseHotel.Models
             get { return priceList; }
         }
 
+        //creating constructors
         public OrderItem() { }
-
         public OrderItem(int orderItemId, string petName, string specie, DateTime arrival, DateTime departure) {
 
             OrderItemId = orderItemId;

@@ -13,8 +13,9 @@ namespace PetParadiseHotel.Models
         public string Zip { get; set; }
         public string Email { get; set; }
 
-
+        //creating empty constructor
         public Customer() { }
+        //creating constructor
         public Customer(int customerId, string firstName, string lastName, string address, string zip, string city,
             string email, string phone) : base(firstName, lastName, phone)
         {

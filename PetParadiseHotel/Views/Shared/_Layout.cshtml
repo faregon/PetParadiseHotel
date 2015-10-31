@@ -18,6 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+            @*displaying a partial view for the menu*@
                 @Html.Partial("_MainMenu")
                
             </div>
@@ -36,6 +37,7 @@
             @RenderBody()
         </div>
         <div id="info-boxes">
+            @*sectiosn positioning here*@
             @RenderSection("Contact", false)
             <hr />
             @RenderSection("Pricelist", false)

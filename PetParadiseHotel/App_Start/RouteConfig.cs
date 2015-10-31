@@ -16,6 +16,7 @@ namespace PetParadiseHotel
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
+                // setting the default page to be about/index
                 defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional }
             );
         }

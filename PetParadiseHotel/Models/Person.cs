@@ -15,6 +15,7 @@ namespace PetParadiseHotel.Models
         public string Phone { get; set; }
 
 
+        //creating constructors
         public Person() { }
 
         public Person(string firstName, string lastName, string phone)

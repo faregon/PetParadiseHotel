@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PetParadiseHotel.Infrastructure;
-
+// in this controller we will store
+// all the child actions 
 namespace PetParadiseHotel.Controllers
 {
     public class CActionsController : Controller
@@ -28,26 +29,33 @@ namespace PetParadiseHotel.Controllers
             prices.Add("Snake", 80.00M);
 
             ViewBag.Prices = prices;
-
+            //Create a partiel view, notice this is located in the Shared folder
+            //so therefore the convention is to use _ in front of the view name
             return PartialView("_PriceList", prices);
         }
 
         [ChildActionOnly]
         public ActionResult _ResidentPets()
         {
+            //declaring variable repository of type repository
             Repository repository = new Repository();
+            // Create a Repository object and save it to a session variable
+            // if it doesn’t already exists as a session variabel
+
             if (Session["repository"] == null)
             {
                 repository = new Repository();
                 Session["repository"] = repository;
             }
+            // Read it from the session if already exists as a session variable
             else
             {
                 repository = (Repository)Session["repository"];
             }
-          
-      
-            return View("_ResidentPets",repository);
+
+            //Create a partiel view, notice this is located in the Shared folder
+            //so therefore the convention is to use _ in front of the view name
+            return PartialView("_ResidentPets",repository);
         }
     }
 }

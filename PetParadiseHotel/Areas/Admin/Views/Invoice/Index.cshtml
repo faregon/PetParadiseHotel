@@ -15,17 +15,16 @@
         {
             <p>
                 
-          
-                Species : @Html.DisplayFor(m=>item.Specie)<br />
-                Name: @item.PetName <br />
-                Period: @item.Arrival.ToString("D") to @item.Departure.ToString("D")<br />
-                Days: @item.Days<br />
-                Price: @item.PricePerday kr. per day <br />
-                Price for the whole stay: @invoice.TotalPrice kr.
+          @Html.LabelFor(m=>item.Specie) @Html.DisplayFor(m=>item.Specie)<br />
+           @Html.LabelFor(m=>item.PetName): @Html.DisplayFor(m => item.PetName) <br />
+            <strong>Period</strong>: @item.Arrival.ToString("D") to @item.Departure.ToString("D")<br />
+                <strong>Days</strong>: @Html.DisplayFor(m=>item.Days)<br />
+                <strong>Price</strong>:   @Html.DisplayFor(m => item.PricePerday) kr.per day <br />
+                <strong>Price for the whole stay</strong>:   @Html.DisplayFor(m => invoice.TotalPrice) kr.
 
             </p>
         }
-Employee: @invoice.Employee.FirstName , @invoice.Employee.Initials
+<strong>Employee</strong>: @Html.DisplayFor(m => invoice.Employee.FirstName), @Html.DisplayFor(m => invoice.Employee.Initials)
 <hr />
     </p>
 }

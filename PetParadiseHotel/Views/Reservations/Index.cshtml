@@ -1,9 +1,12 @@
-﻿@model PetParadiseHotel.ViewModels.Reservations
+﻿@*using the reservation viewmodel so we can create a strongly typed view*@
+@model PetParadiseHotel.ViewModels.Reservations
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Customer Information</h2>
+
+@*creatign a strongly typed view reservation form*@
 @using (Html.BeginForm())
 {
     <div class="dataElem formRes">
@@ -73,6 +76,7 @@
 }
 
 
+@*adding the section customer info and display the reservation form results here*@
 @section CustomerInfo{
     <div id="customerInfo" style="margin-top:-550px">
     <p>@Html.DisplayFor(m => m.Invoice.Customer.FirstName) @Html.DisplayFor(m => m.Invoice.Customer.LastName)</p>
