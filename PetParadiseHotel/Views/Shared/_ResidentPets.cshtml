@@ -1,11 +1,15 @@
 ﻿@model PetParadiseHotel.Infrastructure.Repository
-
-@foreach (var invoice in Model.Invoices )
-{
-    foreach (var item in invoice.OrderItems)
-    {
-        <p>Specie: @Html.DisplayFor(m=>item.Specie)</p>
-        <p>PetName: @Html.DisplayFor(m=>item.PetName)</p>
-        <hr />
-    }
+@{
+    Layout = null;
 }
+<div>
+    @foreach (var invoice in Model.Invoices)
+    {
+        foreach (var item in invoice.OrderItems)
+        {
+            <p>Specie: @Html.DisplayFor(m => item.Specie)</p>
+            <p>PetName: @Html.DisplayFor(m => item.PetName)</p>
+            <hr />
+        }
+    }
+</div>
