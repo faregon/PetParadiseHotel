@@ -7,33 +7,33 @@
 <h2>Reservations</h2>
 
 
-    <table class="table table-bordered">
-        <thead>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Species</th>
+            <th>Name</th>
+            <th>Arrival</th>
+            <th>Owner</th>
+            <th>Phone</th>
+
+        </tr>
+    </thead>
+    @*going through all invoices*@
+    @foreach (var invoice in Model.Invoices)
+    {
+        //going through all the items in OrderItem list
+        foreach (var item in invoice.OrderItems)
+        {
             <tr>
-                <th>Species</th>
-                <th>Name</th>
-                <th>Arrival</th>
-                <th>Owner</th>
-                <th>Phone</th>
+                <td>@Html.DisplayFor(m => item.Specie)</td>
+                <td>@Html.DisplayFor(m => item.PetName)</td>
+                <td>@item.Arrival.ToString("D")</td>
+                <td>@Html.DisplayFor(m => invoice.Customer.FirstName)  @Html.DisplayFor(m => invoice.Customer.LastName)</td>
+                <td>@Html.DisplayFor(m => invoice.Customer.Phone)</td>
 
             </tr>
-        </thead>
-        @*going through all invoices*@
-        @foreach (var invoice in Model.Invoices)
-        {
-            //going through all the items in OrderItem list
-            foreach (var item in invoice.OrderItems)
-            {
-                <tr>
-                    <td>@item.Specie</td>
-                    <td>@item.PetName</td>
-                    <td>@item.Arrival.ToString("D")</td>
-                    <td>@invoice.Customer.FirstName  @invoice.Customer.LastName</td>
-                    <td>@invoice.Customer.Phone</td>
-
-                </tr>
-            }
-
         }
-    </table>
+
+    }
+</table>
 @*calling the information from the render helper to display*@
