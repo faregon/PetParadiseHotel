@@ -1,6 +1,7 @@
 ﻿<div id="priceList">
     <ul> @*making a foreach loop for the prices dictionary in and showing
               the keys and values attched to them*@
+
         @foreach (var item in ViewBag.Prices)
         {
             <li>@item.Key @item.Value kr. per day</li>
