@@ -19,7 +19,7 @@ namespace PetParadiseHotel.Models
         public Invoice Invoice { get; set; }
 
         public int Days {
-            set { days = value; }
+        
             get
             {
                 //calculating the total days by extracting departure date from arrival date

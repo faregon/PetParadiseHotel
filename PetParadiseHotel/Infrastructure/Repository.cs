@@ -9,10 +9,10 @@ namespace PetParadiseHotel.Infrastructure
     public class Repository
     {
         //create Dictionary collection
-        Dictionary<string, double> prices = new Dictionary<string, double>();
+        private Dictionary<string, double> prices = new Dictionary<string, double>();
         public Dictionary<string, double> Prices { get { return prices; } }
 
-        List<Invoice> invoices = new List<Invoice>();
+        private List<Invoice> invoices = new List<Invoice>();
         public List<Invoice> Invoices { get { return invoices; } }
 
         public Repository()
